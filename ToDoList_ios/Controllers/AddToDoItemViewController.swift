@@ -22,8 +22,6 @@ class AddTodoItemViewController: UIViewController {
 //        let todoItem = TodoItem(title: titleTextField.text ?? "", description: descriptionTextField.text ?? "")
 //        onSave?(todoItem)
         dismiss(animated: true, completion: nil)
-        print(titleTextField.text!)
-        print(descriptionTextField.text!)
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {

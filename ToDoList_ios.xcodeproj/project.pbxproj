@@ -15,6 +15,8 @@
 		D32AF33229F844EB0065A303 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D32AF33029F844EB0065A303 /* LaunchScreen.storyboard */; };
 		D32AF33B29F858B30065A303 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32AF33A29F858B30065A303 /* ToDoItem.swift */; };
 		D32AF33F29F85CD10065A303 /* AddToDoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32AF33E29F85CD00065A303 /* AddToDoItemViewController.swift */; };
+		D32AF34229F961520065A303 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32AF34029F961520065A303 /* TaskCell.swift */; };
+		D32AF34329F961520065A303 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32AF34129F961520065A303 /* TaskCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		D32AF33329F844EB0065A303 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D32AF33A29F858B30065A303 /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		D32AF33E29F85CD00065A303 /* AddToDoItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoItemViewController.swift; sourceTree = "<group>"; };
+		D32AF34029F961520065A303 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		D32AF34129F961520065A303 /* TaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				D32AF32B29F844EA0065A303 /* Main.storyboard */,
+				D32AF34029F961520065A303 /* TaskCell.swift */,
+				D32AF34129F961520065A303 /* TaskCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -155,6 +161,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D32AF34329F961520065A303 /* TaskCell.xib in Resources */,
 				D32AF33229F844EB0065A303 /* LaunchScreen.storyboard in Resources */,
 				D32AF32F29F844EB0065A303 /* Assets.xcassets in Resources */,
 				D32AF32D29F844EA0065A303 /* Main.storyboard in Resources */,
@@ -172,6 +179,7 @@
 				D32AF32A29F844EA0065A303 /* ToDoListViewController.swift in Sources */,
 				D32AF32629F844EA0065A303 /* AppDelegate.swift in Sources */,
 				D32AF33B29F858B30065A303 /* ToDoItem.swift in Sources */,
+				D32AF34229F961520065A303 /* TaskCell.swift in Sources */,
 				D32AF32829F844EA0065A303 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

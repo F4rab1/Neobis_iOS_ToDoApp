@@ -7,15 +7,21 @@
 
 import UIKit
 
-class ToDoListViewController: UIViewController, UITableViewDataSource {
+class ToDoListViewController: UIViewController {
     
     @IBOutlet weak var tasksView: UITableView!
     
-    var todoItems: [ToDoItem] = []
+    var todoItems: [ToDoItem] = [
+        ToDoItem(title: "First", description: "First"),
+        ToDoItem(title: "2", description: "First"),
+        ToDoItem(title: "3", description: "First")
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tasksView.dataSource = self
+        tasksView.register(UINib(nibName: "TaskCell", bundle: nil), forCellReuseIdentifier: "TodoCell")
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
@@ -26,20 +32,21 @@ class ToDoListViewController: UIViewController, UITableViewDataSource {
 //        tableView.setEditing(!tableView.isEditing, animated: true)
     }
     
+}
+
+extension ToDoListViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todoItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as! TaskCell
         
         let todoItem = todoItems[indexPath.row]
-        cell.textLabel?.text = todoItem.title
-        cell.detailTextLabel?.text = todoItem.description
+        cell.titleLabel.text = todoItem.title
+        cell.descryptionLabel.text = todoItem.description
         
         return cell
     }
-    
 }
-
-
