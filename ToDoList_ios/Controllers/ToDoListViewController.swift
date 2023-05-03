@@ -11,13 +11,18 @@ class ToDoListViewController: UIViewController {
     
     @IBOutlet weak var tasksView: UITableView!
     
-    var toDoItems = ToDoBrain()
-
+    var toDoItems = [ToDoItem]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tasksView.dataSource = self
         tasksView.register(UINib(nibName: "TaskCell", bundle: nil), forCellReuseIdentifier: "TodoCell")
+        
+        if let savedData = UserDefaults.standard.object(forKey: "ToDoList") as? Data,
+           let savedList = try? PropertyListDecoder().decode([ToDoItem].self, from: savedData) {
+            toDoItems = savedList
+        }
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
@@ -32,30 +37,20 @@ class ToDoListViewController: UIViewController {
 extension ToDoListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let size = toDoItems.getSize()
-        return size
+        return toDoItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! TaskCell
         
         // Get the title and description for the current row
-        let title = toDoItems.getTitleValue(row: indexPath.row)
-        let description = toDoItems.getDescryptionValue(row: indexPath.row)
+        let title = toDoItems[indexPath.row].title
+        let description = toDoItems[indexPath.row].description
         
         // Set the text label for the cell
         cell.titleLabel.text = title
         cell.descryptionLabel.text = description
         
         return cell
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as! TaskCell
-//
-////        let todoItem = todoItems[indexPath.row]
-////        cell.titleLabel.text = todoItem.title
-////        cell.descryptionLabel.text = todoItem.description
-//        cell.titleLabel.text = toDoItems.getTitleValue(row: indexPath.row)
-////        cell.descryptionLabel.text = toDoItems.getDescryptionValue(row: indexPath.row)
-//
-//        return cell
     }
 }

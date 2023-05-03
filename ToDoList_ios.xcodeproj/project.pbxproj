@@ -17,7 +17,6 @@
 		D32AF33F29F85CD10065A303 /* AddToDoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32AF33E29F85CD00065A303 /* AddToDoItemViewController.swift */; };
 		D32AF34229F961520065A303 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32AF34029F961520065A303 /* TaskCell.swift */; };
 		D32AF34329F961520065A303 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32AF34129F961520065A303 /* TaskCell.xib */; };
-		D3EDD52629FA7B79001A2A21 /* ToDoBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EDD52529FA7B79001A2A21 /* ToDoBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +32,6 @@
 		D32AF33E29F85CD00065A303 /* AddToDoItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoItemViewController.swift; sourceTree = "<group>"; };
 		D32AF34029F961520065A303 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		D32AF34129F961520065A303 /* TaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
-		D3EDD52529FA7B79001A2A21 /* ToDoBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				D32AF33A29F858B30065A303 /* ToDoItem.swift */,
-				D3EDD52529FA7B79001A2A21 /* ToDoBrain.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,7 +181,6 @@
 				D32AF33B29F858B30065A303 /* ToDoItem.swift in Sources */,
 				D32AF34229F961520065A303 /* TaskCell.swift in Sources */,
 				D32AF32829F844EA0065A303 /* SceneDelegate.swift in Sources */,
-				D3EDD52629FA7B79001A2A21 /* ToDoBrain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
