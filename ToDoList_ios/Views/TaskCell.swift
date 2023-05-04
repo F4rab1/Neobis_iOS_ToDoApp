@@ -13,6 +13,8 @@ class TaskCell: UITableViewCell {
     @IBOutlet weak var descryptionLabel: UILabel!
     @IBOutlet weak var completeButton: UIButton!
     
+    var completed: Bool = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,7 +27,14 @@ class TaskCell: UITableViewCell {
     }
 
     @IBAction func completeSelected(_ sender: UIButton) {
-        completeButton.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
-        completeButton.currentImage?.withTintColor(.systemGreen)
+        if !completed {
+            completeButton.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+            completeButton.currentImage?.withTintColor(.systemGreen)
+            completed = true
+        } else {
+            completeButton.setImage(UIImage(systemName: "circle"), for: .normal)
+            completeButton.currentImage?.withTintColor(.systemGreen)
+            completed = false
+        }
     }
 }

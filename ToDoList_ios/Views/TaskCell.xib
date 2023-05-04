@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleAspectFit" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yfb-tV-h7k">
-                        <rect key="frame" x="0.0" y="5" width="380" height="84"/>
+                        <rect key="frame" x="0.0" y="5" width="340" height="84"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S06-M3-bui">
                                 <rect key="frame" x="0.0" y="27" width="30" height="30"/>
@@ -61,7 +61,7 @@
                                     <constraint firstItem="Xaj-eC-PhO" firstAttribute="leading" secondItem="Ptj-qu-JP4" secondAttribute="leading" constant="10" id="qLh-Rt-PrV"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nz6-Gn-TSG">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nz6-Gn-TSG">
                                 <rect key="frame" x="350" y="27" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="QiQ-6C-uzF"/>

@@ -13,9 +13,17 @@ class AddTodoItemViewController: UIViewController {
     @IBOutlet weak var descriptionTextField: UITextField!
     
     var toDoItems = [ToDoItem]()
+    var callback: (()->())?
+    var edit: ((ToDoItem)->())?
+    var toEdit = false
+    
+    var titlee = ""
+    var descriptionn = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleTextField.text = titlee
+        descriptionTextField.text = descriptionn
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
@@ -30,8 +38,14 @@ class AddTodoItemViewController: UIViewController {
     }
     
     func saveToDoItems() {
-        if let savedData = try? PropertyListEncoder().encode(toDoItems) {
-            UserDefaults.standard.set(savedData, forKey: "ToDoList")
+        if !toEdit {
+            if let savedData = try? PropertyListEncoder().encode(toDoItems) {
+                UserDefaults.standard.set(savedData, forKey: "ToDoList")
+                callback?()
+            }
+        } else {
+            edit?(ToDoItem(title: titleTextField.text ?? "", description: descriptionTextField.text ?? ""))
+            toEdit = false
         }
     }
 }
