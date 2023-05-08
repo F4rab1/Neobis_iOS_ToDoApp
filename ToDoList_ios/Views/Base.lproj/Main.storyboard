@@ -39,6 +39,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="editButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bu3-BK-v8H"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDE-WM-iAx">
                                 <rect key="frame" x="308" y="742" width="60" height="60"/>
@@ -116,30 +119,32 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Название" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NDD-hb-AqU">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CAA-gc-YV2">
                                 <rect key="frame" x="20" y="129" width="353" height="613"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c1P-5C-98D"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
-                            <constraint firstItem="c1P-5C-98D" firstAttribute="bottom" secondItem="NDD-hb-AqU" secondAttribute="bottom" constant="100" id="3Am-Dt-LlT"/>
+                            <constraint firstItem="c1P-5C-98D" firstAttribute="bottom" secondItem="CAA-gc-YV2" secondAttribute="bottom" constant="100" id="60m-mm-F8C"/>
                             <constraint firstItem="B2t-b8-Rlk" firstAttribute="leading" secondItem="c1P-5C-98D" secondAttribute="leading" constant="20" id="6cG-mA-yCx"/>
-                            <constraint firstItem="c1P-5C-98D" firstAttribute="trailing" secondItem="NDD-hb-AqU" secondAttribute="trailing" constant="20" id="AJI-69-H3G"/>
+                            <constraint firstItem="CAA-gc-YV2" firstAttribute="top" secondItem="B2t-b8-Rlk" secondAttribute="bottom" constant="25" id="VLY-qq-94W"/>
                             <constraint firstItem="xZg-Ne-DxI" firstAttribute="top" secondItem="c1P-5C-98D" secondAttribute="top" constant="10" id="WRr-Du-EKz"/>
                             <constraint firstItem="c1P-5C-98D" firstAttribute="trailing" secondItem="B2t-b8-Rlk" secondAttribute="trailing" constant="20" id="WYG-rO-yOe"/>
                             <constraint firstItem="USK-Qv-T9V" firstAttribute="leading" secondItem="c1P-5C-98D" secondAttribute="leading" constant="10" id="fig-qs-OgF"/>
+                            <constraint firstItem="CAA-gc-YV2" firstAttribute="leading" secondItem="c1P-5C-98D" secondAttribute="leading" constant="20" id="oca-ZP-u6d"/>
                             <constraint firstItem="c1P-5C-98D" firstAttribute="trailing" secondItem="xZg-Ne-DxI" secondAttribute="trailing" constant="10" id="qUF-1V-Thh"/>
                             <constraint firstItem="B2t-b8-Rlk" firstAttribute="top" secondItem="c1P-5C-98D" secondAttribute="top" constant="70" id="rIw-Z5-T9A"/>
-                            <constraint firstItem="NDD-hb-AqU" firstAttribute="top" secondItem="B2t-b8-Rlk" secondAttribute="bottom" constant="25" id="t0r-uu-8vO"/>
-                            <constraint firstItem="NDD-hb-AqU" firstAttribute="leading" secondItem="c1P-5C-98D" secondAttribute="leading" constant="20" id="xnF-Bq-zWv"/>
+                            <constraint firstItem="c1P-5C-98D" firstAttribute="trailing" secondItem="CAA-gc-YV2" secondAttribute="trailing" constant="20" id="uCs-Ng-2QU"/>
                             <constraint firstItem="USK-Qv-T9V" firstAttribute="top" secondItem="c1P-5C-98D" secondAttribute="top" constant="10" id="xxG-QV-pVY"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="descriptionTextField" destination="NDD-hb-AqU" id="b3Z-ua-nAB"/>
+                        <outlet property="descriptionTextView" destination="CAA-gc-YV2" id="Xr2-Z0-GKL"/>
                         <outlet property="titleTextField" destination="B2t-b8-Rlk" id="EJH-sR-ABg"/>
                     </connections>
                 </viewController>
@@ -151,6 +156,9 @@
     <resources>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

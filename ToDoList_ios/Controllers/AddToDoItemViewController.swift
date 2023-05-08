@@ -10,7 +10,7 @@ import UIKit
 class AddTodoItemViewController: UIViewController {
     
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var descriptionTextField: UITextField!
+    @IBOutlet weak var descriptionTextView: UITextView!
     
     var toDoItems = [ToDoItem]()
     var callback: (()->())?
@@ -23,11 +23,13 @@ class AddTodoItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleTextField.text = titlee
-        descriptionTextField.text = descriptionn
+        descriptionTextView.text = descriptionn
+        descriptionTextView.textContainerInset = UIEdgeInsets.zero
+        descriptionTextView.textContainer.lineFragmentPadding = 0
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        let newItem = ToDoItem(title: titleTextField.text ?? "", description: descriptionTextField.text ?? "")
+        let newItem = ToDoItem(title: titleTextField.text ?? "", description: descriptionTextView.text ?? "")
         toDoItems.append(newItem)
         saveToDoItems() // save updated to-do items to UserDefaults
         dismiss(animated: true, completion: nil)
@@ -44,7 +46,7 @@ class AddTodoItemViewController: UIViewController {
                 callback?()
             }
         } else {
-            edit?(ToDoItem(title: titleTextField.text ?? "", description: descriptionTextField.text ?? ""))
+            edit?(ToDoItem(title: titleTextField.text ?? "", description: descriptionTextView.text ?? ""))
             toEdit = false
         }
     }
